@@ -1,0 +1,88 @@
+-- MariaDB dump 10.19-11.3.2-MariaDB, for Linux (x86_64)
+--
+-- Host: localhost    Database: db-crud-1
+-- ------------------------------------------------------
+-- Server version	11.3.2-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `employees`
+--
+
+DROP TABLE IF EXISTS `employees`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `employees` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `fiscal_code` varchar(15) NOT NULL,
+  `salary` decimal(8,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `employees_fiscal_code_unique` (`fiscal_code`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employees`
+--
+
+LOCK TABLES `employees` WRITE;
+/*!40000 ALTER TABLE `employees` DISABLE KEYS */;
+INSERT INTO `employees` VALUES
+(4,'Guybrush','Threepwood','348270786139',2000.00,'2024-02-15 10:04:36','2024-02-16 09:56:17'),
+(5,'Olaf','Mante','320504230298',1146.56,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(6,'Kathleen','Stokes','623704332117',2362.68,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(7,'Eleonore','Friesen','573529256594',2403.15,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(8,'Queenie!!','Cole','473518837925',2520.95,'2024-02-15 10:04:36','2024-02-16 09:54:03'),
+(10,'Corrine','Baumbach','468291034062',1618.66,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(11,'Alverta','West','005289289768',1592.75,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(12,'Jameson','Durgan','133648972678',1314.38,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(13,'Florence','Nolan','520019005114',1902.52,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(14,'Name','Christiansen','081046268545',1687.60,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(15,'Roderick','Cummings','277476931579',2523.38,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(16,'Liza','Kassulke','289427475564',2682.94,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(17,'Fred','Wintheiser','313218070144',2439.32,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(18,'Efrain','Ortiz','407799097871',2425.81,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(19,'Kyla','Larson','736308116043',1054.96,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(20,'Quinn','Ryan','850279207358',1307.57,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(21,'Ona','Schultz','090523996398',2438.18,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(22,'Rosalyn','Nolan','264428440887',2024.18,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(23,'Tanner','Schmitt','414844979740',1671.67,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(24,'Addie','Koss','814610863529',2437.69,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(25,'Jordyn','Kuphal','274585226307',2257.41,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(26,'Efrain','Howe','053465000092',2343.54,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(27,'Fritz','Stiedemann','317435621407',1415.23,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(28,'Donna','West','127474378120',2189.73,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(29,'Jordyn','Ernser','042503567526',1936.00,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(30,'Corene','Funk','482349263017',2727.09,'2024-02-15 10:04:36','2024-02-15 10:04:36'),
+(31,'sdfas','sdfsdf','asdfdddd',3333.00,'2024-02-15 10:15:24','2024-02-15 10:15:24');
+/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'db-crud-1'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-07-01 16:18:17
